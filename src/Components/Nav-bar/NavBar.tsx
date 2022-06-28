@@ -23,7 +23,9 @@ export const NavBar: React.FC = () => {
   return (
     <nav id="nav" className="grid grid-cols-2 fixed top-0 w-full bg-base-100">
       <section id="logo" className="">
-        <Logo size={logoSize} />
+        <a href="/">
+          <Logo size={logoSize} />
+        </a>
       </section>
       <section id="nav-buttons" className="grid grid-cols-4">
         <a href="/" className="font-semibold text-primary w-fit h-fit">
