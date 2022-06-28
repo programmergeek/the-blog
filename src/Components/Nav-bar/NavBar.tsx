@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Logo } from "../logo";
 
 export const NavBar: React.FC = () => {
-  const [logoSize, updateLogoSize] = useState<"small" | "big">("big");
+  const [logoSize, updateLogoSize] = useState<"small" | "big" | "xs" | "md">(
+    "big"
+  );
 
   useEffect(() => {
     // when the user scrolls on the page
