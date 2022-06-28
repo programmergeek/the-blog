@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Logo } from "../logo";
 
 export const NavBar: React.FC = () => {
+  const [logoSize, updateLogoSize] = useState<"small" | "big">("big");
+
+  useEffect(() => {
+    // when the user scrolls on the page
+    window.onscroll = () => {
+      // check if the user has scrolled to the top of the page
+      if (window.scrollY === 0) {
+        // if the user has, change the logo size to 'big'
+        updateLogoSize("big");
+      } else {
+        // if not make the logo size 'small'
+        updateLogoSize("small");
+      }
+    };
+  }, []);
+
   return (
     <nav id="nav" className="grid grid-cols-2 fixed top-0 w-full">
       <section id="logo" className="">
-        <Logo size="big" />
+        <Logo size={logoSize} />
       </section>
       <section id="nav-buttons" className="grid grid-cols-4">
         <a href="/" className="font-semibold text-primary w-fit h-fit">
