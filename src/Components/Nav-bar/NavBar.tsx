@@ -22,42 +22,6 @@ export const NavBar: React.FC = () => {
   }, []);
 
   return (
-    // <nav id="nav" className="grid grid-cols-2 fixed top-0 w-full bg-base-100">
-    //   <section id="logo" className="">
-    //     <a href="/">
-    //       <Logo size={logoSize} />
-    //     </a>
-    //   </section>
-    //   <section id="nav-buttons" className="grid grid-cols-4">
-    //     <a href="/" className="font-semibold text-primary w-fit h-fit">
-    //       <div id="home" className="w-fit">
-    //         Home
-    //         <div className="h-1 w-10 ml-1 bg-primary rounded-full"></div>
-    //       </div>
-    //     </a>
-    //     <a
-    //       href="http://github.com/programmergeek"
-    //       className="text-accent hover:text-gray-900 font-semibold w-fit h-fit"
-    //       style={{ transition: "150ms" }}
-    //     >
-    //       Github
-    //     </a>
-    //     <a
-    //       href="https://twitter.com/programergeek"
-    //       className="text-accent hover:text-[#1DA1F2] font-semibold w-fit h-fit"
-    //       style={{ transition: "150ms" }}
-    //     >
-    //       Twitter
-    //     </a>
-    //     <a
-    //       href="https://www.linkedin.com/in/thato-will-joseph-b0aa54219/"
-    //       className="text-accent hover:text-[#0077b5] font-semibold w-fit h-fit"
-    //       style={{ transition: "150ms" }}
-    //     >
-    //       Linkedin
-    //     </a>
-    //   </section>
-    // </nav>
     <div className="drawer drawer-end fixed top-0">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
