@@ -8,7 +8,7 @@ export const NavBar: React.FC = () => {
     // when the user scrolls on the page
     window.onscroll = () => {
       // check if the user has scrolled to the top of the page
-      if (window.scrollY === 0) {
+      if (window.scrollY < 150) {
         // if the user has, change the logo size to 'big'
         updateLogoSize("big");
       } else {
@@ -19,7 +19,7 @@ export const NavBar: React.FC = () => {
   }, []);
 
   return (
-    <nav id="nav" className="grid grid-cols-2 fixed top-0 w-full">
+    <nav id="nav" className="grid grid-cols-2 fixed top-0 w-full bg-base-100">
       <section id="logo" className="">
         <Logo size={logoSize} />
       </section>
