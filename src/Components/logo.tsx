@@ -1,10 +1,20 @@
 import React from "react";
 
-export const Logo: React.FC<{ size: "big" | "small" }> = (props) => {
+export const Logo: React.FC<{ size: "big" | "small" | "md" | "xs" }> = (
+  props
+) => {
   const size = {
+    xs: {
+      width: "156",
+      height: "54",
+    },
     small: {
       width: "234",
       height: "81",
+    },
+    md: {
+      width: "303",
+      height: "100",
     },
     big: {
       width: "542",
