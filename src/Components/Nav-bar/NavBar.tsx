@@ -22,7 +22,7 @@ export const NavBar: React.FC = () => {
   }, []);
 
   return (
-    <div className="drawer drawer-end fixed top-0">
+    <div className="drawer drawer-end md:h-40 fixed top-0">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}
