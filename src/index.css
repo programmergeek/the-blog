@@ -14,3 +14,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main{
+  display: grid;
+  grid-template-areas: 
+  'left-gutter nav nav nav right-gutter'
+  'left-gutter banner banner banner right-gutter'
+  'left-gutter masonry-grid masonry-grid masonry-grid right-gutter';
+}
+
+.highlight{
+  grid-template-columns: 55% auto;
+}
+
+.navigation {
+  grid-area: nav;
+  height: 150px;
+}
+
+.left-gutter{
+  grid-area: left-gutter;
+  width: 10vw;
+}
+
+.banner{
+  grid-area: banner;
+  height: auto;
+}
+
+.masonry-grid{
+  grid-area: masonry-grid;
+}
+
+.right-gutter{
+  grid-area: right-gutter;
+  width: 10vw;
+}
