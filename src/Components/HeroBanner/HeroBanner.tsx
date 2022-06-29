@@ -1,14 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
 export const HeroBanner: React.FC = () => {
-  const [mouseOver, updateMouseOver] = useState<boolean>(false);
-
   return (
-    <div
-      className="highlight w-full lg:h-auto bg-base-100 cursor-pointer sm:grid flex flex-col"
-      onMouseEnter={() => updateMouseOver(true)}
-      onMouseLeave={() => updateMouseOver(false)}
-    >
+    <div className="highlight w-full lg:h-auto bg-base-100 cursor-pointer sm:grid flex flex-col">
       <img
         src="https://picsum.photos/615/420"
         alt=""
@@ -20,9 +14,7 @@ export const HeroBanner: React.FC = () => {
           24 May 2022{" "}
         </h5>
         <h1
-          className={`sm:text-xl font-medium md:text-[56px] md:leading-[60px] md:mb-4 lg:text-7xl text-left ${
-            mouseOver ? "text-secondary" : ""
-          }`}
+          className={`sm:text-xl font-medium md:text-[56px] md:leading-[60px] md:mb-4 lg:text-7xl text-left hover:text-secondary`}
           style={{ transition: "150ms" }}
         >
           Understanding closures in JavaScript
