@@ -24,7 +24,7 @@ code {
 }
 
 .highlight{
-  grid-template-columns: 55% auto;
+  grid-template-columns: 58% auto;
 }
 
 .navigation {
@@ -34,7 +34,7 @@ code {
 
 .left-gutter{
   grid-area: left-gutter;
-  width: 10vw;
+  width: 30px;
 }
 
 .banner{
@@ -48,5 +48,15 @@ code {
 
 .right-gutter{
   grid-area: right-gutter;
-  width: 10vw;
+  width: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .right-gutter{
+    width: 20px;
+  }
+
+  .left-gutter{
+    width: 20px;
+  }
 }
