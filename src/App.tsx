@@ -5,17 +5,16 @@ import { NavBar } from "./Components/Nav-bar/NavBar";
 
 function App() {
   return (
-    <div className="App main">
-      <div className="navigation">
-        <NavBar />
+    <NavBar>
+      <div className="App main">
+        <div className="left-gutter w-1/5"></div>
+        <div className="banner border-4 border-black rounded-2xl">
+          <HeroBanner />
+        </div>
+        <div className="masonry-grid"></div>
+        <div className="right-gutter w-1/5"></div>
       </div>
-      <div className="left-gutter w-1/5"></div>
-      <div className="banner border-4 border-black rounded-2xl">
-        <HeroBanner />
-      </div>
-      <div className="masonry-grid"></div>
-      <div className="right-gutter w-1/5"></div>
-    </div>
+    </NavBar>
   );
 }
 

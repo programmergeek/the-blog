@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Logo } from "../logo";
 import { Menu } from "../menu";
 
-export const NavBar: React.FC = () => {
+interface Props {
+  children: React.ReactNode;
+}
+
+export const NavBar: React.FC<Props> = ({ ...props }) => {
   const [logoSize, updateLogoSize] = useState<"small" | "big" | "xs" | "md">(
     "big"
   );
@@ -11,7 +15,7 @@ export const NavBar: React.FC = () => {
     // when the user scrolls on the page
     window.onscroll = () => {
       // check if the user has scrolled to the top of the page
-      if (window.scrollY < 150) {
+      if (window.scrollY === 0) {
         // if the user has, change the logo size to 'big'
         updateLogoSize("big");
       } else {
@@ -22,11 +26,11 @@ export const NavBar: React.FC = () => {
   }, []);
 
   return (
-    <div className="drawer drawer-end md:h-40 fixed top-0 lg:w-[96vw] md:w-[94vw] w-11/12">
+    <div className="drawer drawer-end" id="nav">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}
-        <div className="w-full navbar bg-base-100">
+        <div className="w-full navbar px-5 bg-base-100 fixed top-0">
           <div className="flex-1 px-2 mx-2">
             <a href="/" className="hidden md:block">
               <Logo size={logoSize} />
@@ -81,12 +85,13 @@ export const NavBar: React.FC = () => {
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-3"
-              className="btn btn-square btn-ghost mb-3"
+              className="btn btn-square btn-ghost mb-3 mr-5"
             >
               <Menu />
             </label>
           </div>
         </div>
+        <div className="drawer-content mt-28 md:mt-40">{props.children}</div>
       </div>
       <div className="drawer-side">
         <label htmlFor="my-drawer-3" className="drawer-overlay"></label>
