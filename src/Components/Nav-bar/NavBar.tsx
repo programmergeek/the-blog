@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Logo } from "../logo";
-import { Menu } from "../menu";
+import { Logo } from "../Icons/logo";
+import { Menu } from "../Icons/menu";
 
 interface Props {
   children: React.ReactNode;
