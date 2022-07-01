@@ -6,7 +6,7 @@ export const HeroBanner: React.FC = () => {
       <img
         src="https://picsum.photos/615/420"
         alt=""
-        className=" w-full h-auto rounded-xl sm:mx-1 sm:my-2 "
+        className=" w-full h-auto rounded-xl sm:mx-2 sm:my-2 "
       />
       <div className="md:pl-5 pl-4 pb-2 md:pb-0 pt-2 pr-2 md:pr-5 lg:p-7 xl:p-8">
         <h5 className="text-left text-orange-400 text-xs sm:text-sm md:text-md lg:text-lg 2xl:text-2xl">
