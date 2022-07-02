@@ -15,7 +15,6 @@ function App() {
             href="/"
             snippet="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet faucibus nisl vel faucibus. Quisque imperdiet, arcu vel luctus varius, metus sem pharetra nunc, a vulputate nunc magna et justo."
             title="Understanding closures in JavaScript"
-            tags={["Test", "JavaScript", "This is Sparta"]}
           />
         </div>
         <div className="masonry-grid"></div>
