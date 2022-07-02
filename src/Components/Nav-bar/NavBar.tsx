@@ -26,11 +26,11 @@ export const NavBar: React.FC<Props> = ({ ...props }) => {
   }, []);
 
   return (
-    <div className="drawer drawer-end" id="nav">
+    <div className="drawer drawer-end h-fit" id="nav">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}
-        <div className="w-full navbar px-5 bg-base-100 fixed top-0">
+        <div className="w-full navbar px-5 bg-base-100 fixed top-0 z-50">
           <div className="flex-1 px-2 mx-2">
             <a href="/" className="hidden md:block">
               <Logo size={logoSize} />
