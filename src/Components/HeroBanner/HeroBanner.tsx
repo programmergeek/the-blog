@@ -23,9 +23,9 @@ export const HeroBanner: React.FC<Props> = ({ ...props }) => {
             <h5 className="text-left text-orange-400 text-xs sm:text-sm md:text-md lg:text-lg 2xl:text-2xl">
               {props.date}
             </h5>
-            <Tag />
-            <Tag />
-            <Tag />
+            <Tag tagName="Test" />
+            <Tag tagName="JavaScript" />
+            <Tag tagName="This is Sparta" />
           </div>
           <h1
             className={`font-semibold sm:font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl  text-left hover:text-secondary`}
