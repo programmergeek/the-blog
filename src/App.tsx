@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { Card } from "./Components/Card/Card";
 import { HeroBanner } from "./Components/HeroBanner/HeroBanner";
 import { NavBar } from "./Components/Nav-bar/NavBar";
 
@@ -8,7 +9,7 @@ function App() {
     <NavBar>
       <div className="App main">
         <div className="left-gutter w-1/5"></div>
-        <div className="banner border-4 border-black rounded-2xl">
+        <div className="banner border-4 border-black rounded-2xl h-fit">
           <HeroBanner
             image="https://picsum.photos/615/420"
             date="24 May 2022"
@@ -17,7 +18,14 @@ function App() {
             title="Understanding closures in JavaScript"
           />
         </div>
-        <div className="masonry-grid"></div>
+        <div className="masonry-grid grid grid-cols-4">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
         <div className="right-gutter w-1/5"></div>
       </div>
     </NavBar>
