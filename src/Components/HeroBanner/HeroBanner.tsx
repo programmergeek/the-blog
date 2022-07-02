@@ -1,4 +1,5 @@
 import React from "react";
+import { Tag } from "../Tag/Tag";
 
 interface Props {
   image: string;
@@ -18,9 +19,14 @@ export const HeroBanner: React.FC<Props> = ({ ...props }) => {
       />
       <div className="md:pl-5 pl-4 pb-2 md:pb-0 pt-2 pr-2 md:pr-5 lg:p-7 xl:p-8">
         <a href={props.href} className="">
-          <h5 className="text-left text-orange-400 text-xs sm:text-sm md:text-md lg:text-lg 2xl:text-2xl">
-            {props.date}
-          </h5>
+          <div className="flex">
+            <h5 className="text-left text-orange-400 text-xs sm:text-sm md:text-md lg:text-lg 2xl:text-2xl">
+              {props.date}
+            </h5>
+            <Tag />
+            <Tag />
+            <Tag />
+          </div>
           <h1
             className={`font-semibold sm:font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl  text-left hover:text-secondary`}
             style={{ transition: "150ms" }}
