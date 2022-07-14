@@ -14,7 +14,7 @@ export const Card: React.FC<Props> = ({ ...props }) => {
       style={{ transition: "150ms" }}
     >
       {props.image ? (
-        <figure className={`p-3 ${props.image ? "" : "hidden"}`}>
+        <figure className="p-3">
           <img className="rounded-xl" src={props.image} alt="card" />
         </figure>
       ) : (
