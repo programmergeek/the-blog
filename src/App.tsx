@@ -29,7 +29,7 @@ function App() {
         <div className="masonry-grid">
           <MasonryGrid>
             <Card {...cardData} image="https://picsum.photos/615/420" />
-            <Card {...cardData} />
+            <Card {...cardData} tags={["css", "front-end"]} />
             <Card {...cardData} />
             <Card {...cardData} image="https://picsum.photos/615/420" />
           </MasonryGrid>
