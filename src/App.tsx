@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import { Card } from "./Components/Card/Card";
 import { HeroBanner } from "./Components/HeroBanner/HeroBanner";
+import { MasonryGrid } from "./Components/MasonryGrid/MasonryGrid";
 import { NavBar } from "./Components/Nav-bar/NavBar";
 
 const cardData = {
@@ -25,11 +26,13 @@ function App() {
             title="Understanding closures in JavaScript"
           />
         </div>
-        <div className="masonry-grid grid grid-cols-4">
-          <Card {...cardData} />
-          <Card {...cardData} />
-          <Card {...cardData} />
-          <Card {...cardData} />
+        <div className="masonry-grid">
+          <MasonryGrid>
+            <Card {...cardData} image="https://picsum.photos/615/420" />
+            <Card {...cardData} />
+            <Card {...cardData} />
+            <Card {...cardData} image="https://picsum.photos/615/420" />
+          </MasonryGrid>
         </div>
         <div className="right-gutter w-1/5"></div>
       </div>

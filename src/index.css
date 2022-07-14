@@ -51,6 +51,22 @@ code {
   width: 30px;
 }
 
+.my-masonry-grid {
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
+  background: transparent;
+  margin-bottom: 30px;
+}
+
 @media only screen and (max-width: 600px) {
   .right-gutter{
     width: 20px;
@@ -58,5 +74,17 @@ code {
 
   .left-gutter{
     width: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .my-masonry-grid {
+    margin-left: -15px; /* gutter size offset */
+  }
+  .my-masonry-grid_column {
+    padding-left: 15px; /* gutter size offset */
+  }
+  .my-masonry-grid_column > div {
+    margin-bottom: 15px; /* space between items */
   }
 }
