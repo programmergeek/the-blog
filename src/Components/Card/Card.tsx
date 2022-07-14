@@ -1,28 +1,32 @@
 import React from "react";
 
-export const Card: React.FC = () => {
+interface Props {
+  title: string;
+  href: string;
+  image?: string;
+  snippet: string;
+}
+
+export const Card: React.FC<Props> = ({ ...props }) => {
   return (
     <div
       className="card w-[400px] bg-base-100 rounded-md hover:shadow-2xl"
       style={{ transition: "150ms" }}
     >
-      <figure className="p-3">
-        <img
-          className="rounded-xl"
-          src="https://picsum.photos/615/420"
-          alt="card"
-        />
-      </figure>
+      {props.image ? (
+        <figure className={`p-3 ${props.image ? "" : "hidden"}`}>
+          <img className="rounded-xl" src={props.image} alt="card" />
+        </figure>
+      ) : (
+        ""
+      )}
       <div className="card-body px-3">
-        <h2 className="card-title text-4xl">CSS Specificity</h2>
-        <p className="text-left">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
-          aliquam quo animi blanditiis nisi reprehenderit laboriosam nesciunt
-          sed corrupti, quae totam, eaque hic nobis fugiat? Eaque repudiandae
-          facilis accusantium mollitia!
-        </p>
+        <h2 className="card-title text-4xl">{props.title}</h2>
+        <p className="text-left">{props.snippet}</p>
         <div className="card-actions justify-end">
-          <button className="btn">Read more</button>
+          <a href={props.href} className="w-fit">
+            <button className="btn">Read more</button>
+          </a>
         </div>
       </div>
     </div>

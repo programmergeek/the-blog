@@ -4,6 +4,13 @@ import { Card } from "./Components/Card/Card";
 import { HeroBanner } from "./Components/HeroBanner/HeroBanner";
 import { NavBar } from "./Components/Nav-bar/NavBar";
 
+const cardData = {
+  href: "/",
+  snippet:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus tincidunt maximus pretium. Morbi lacinia turpis vitae urna mollis mattis. Sed in eros luctus, eleifend sem id, tincidunt orci. Ut nec.",
+  title: "CSS Specificity",
+};
+
 function App() {
   return (
     <NavBar>
@@ -19,12 +26,10 @@ function App() {
           />
         </div>
         <div className="masonry-grid grid grid-cols-4">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Card {...cardData} />
+          <Card {...cardData} />
+          <Card {...cardData} />
+          <Card {...cardData} />
         </div>
         <div className="right-gutter w-1/5"></div>
       </div>
