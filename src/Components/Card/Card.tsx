@@ -3,7 +3,7 @@ import React from "react";
 export const Card: React.FC = () => {
   return (
     <div
-      className="card w-96 bg-base-100 rounded-md hover:shadow-2xl"
+      className="card w-[400px] bg-base-100 rounded-md hover:shadow-2xl"
       style={{ transition: "150ms" }}
     >
       <figure className="p-3">
