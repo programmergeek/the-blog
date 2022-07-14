@@ -10,20 +10,22 @@ interface Props {
 export const Card: React.FC<Props> = ({ ...props }) => {
   return (
     <div
-      className="card w-[400px] bg-base-100 rounded-md hover:shadow-2xl"
+      className="card w-full bg-base-100 rounded-md hover:shadow-2xl"
       style={{ transition: "150ms" }}
     >
       {props.image ? (
         <figure className="p-3">
-          <img className="rounded-xl" src={props.image} alt="card" />
+          <img className="rounded-xl mb-0" src={props.image} alt="card" />
         </figure>
       ) : (
         ""
       )}
-      <div className="card-body px-3">
-        <h2 className="card-title text-4xl">{props.title}</h2>
-        <p className="text-left">{props.snippet}</p>
-        <div className="card-actions justify-end">
+      <div className="p-3 mt-0">
+        <h2 className="card-title text-xl text-left md:text-3xl">
+          {props.title}
+        </h2>
+        <p className="text-left text-xs md:text-base">{props.snippet}</p>
+        <div className="card-actions justify-end py-2">
           <a href={props.href} className="w-fit">
             <button className="btn">Read more</button>
           </a>
