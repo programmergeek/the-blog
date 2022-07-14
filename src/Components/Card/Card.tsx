@@ -13,7 +13,7 @@ export const Card: React.FC = () => {
           alt="card"
         />
       </figure>
-      <div className="card-body">
+      <div className="card-body px-3">
         <h2 className="card-title text-4xl">CSS Specificity</h2>
         <p className="text-left">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
