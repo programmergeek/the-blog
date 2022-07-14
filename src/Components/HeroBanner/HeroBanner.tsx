@@ -26,7 +26,7 @@ export const HeroBanner: React.FC<Props> = ({ ...props }) => {
           className={`font-semibold sm:font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl  text-left hover:text-secondary`}
           style={{ transition: "150ms" }}
         >
-          {props.title}
+          <a href={props.href}>{props.title}</a>
         </h1>
         <p
           className={`text-left text-black text-xs md:text-sm xl:text-xl`}
