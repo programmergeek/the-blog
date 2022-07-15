@@ -24,6 +24,7 @@ function App() {
             href="/"
             snippet="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet faucibus nisl vel faucibus. Quisque imperdiet, arcu vel luctus varius, metus sem pharetra nunc, a vulputate nunc magna et justo."
             title="Understanding closures in JavaScript"
+            tags={["JavaScript", "front-end"]}
           />
         </div>
         <div className="masonry-grid">
@@ -31,7 +32,11 @@ function App() {
             <Card {...cardData} image="https://picsum.photos/615/420" />
             <Card {...cardData} tags={["css", "front-end"]} />
             <Card {...cardData} />
-            <Card {...cardData} image="https://picsum.photos/615/420" />
+            <Card
+              {...cardData}
+              image="https://picsum.photos/615/420"
+              tags={["React", "state management", "front-end"]}
+            />
           </MasonryGrid>
         </div>
         <div className="right-gutter w-1/5"></div>

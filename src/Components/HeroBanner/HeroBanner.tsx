@@ -29,7 +29,7 @@ export const HeroBanner: React.FC<Props> = ({ ...props }) => {
         >
           <a href={props.href}>{props.title}</a>
         </h1>
-        <span className="flex flex-row justify-start -ml-2 mb-1">
+        <span className="flex flex-row flex-wrap justify-start -ml-2 mb-1">
           {props.tags
             ? props.tags.map((tag, i) => {
                 return (

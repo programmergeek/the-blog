@@ -26,7 +26,7 @@ export const Card: React.FC<Props> = ({ ...props }) => {
         <h2 className="card-title text-xl text-left md:text-3xl">
           {props.title}
         </h2>
-        <span className="flex flex-row justify-start -ml-2 my-2">
+        <span className="flex flex-row flex-wrap justify-start -ml-2 my-2">
           {props.tags
             ? props.tags.map((tag, i) => {
                 return (
