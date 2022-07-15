@@ -1,11 +1,12 @@
 import React from "react";
-
+import { Tag } from "../Tag/Tag";
 interface Props {
   image: string;
   date: string;
   title: string;
   snippet: string;
   href: string;
+  tags?: string[];
 }
 
 export const HeroBanner: React.FC<Props> = ({ ...props }) => {
@@ -28,6 +29,17 @@ export const HeroBanner: React.FC<Props> = ({ ...props }) => {
         >
           <a href={props.href}>{props.title}</a>
         </h1>
+        <span className="flex flex-row justify-start -ml-2 mb-1">
+          {props.tags
+            ? props.tags.map((tag, i) => {
+                return (
+                  <div className="" key={i}>
+                    <Tag tagName={tag} />
+                  </div>
+                );
+              })
+            : ""}
+        </span>
         <p
           className={`text-left text-black text-xs md:text-sm xl:text-xl`}
           style={{ transition: "150ms" }}
