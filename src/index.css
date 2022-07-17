@@ -23,6 +23,19 @@ code {
   'left-gutter masonry-grid masonry-grid masonry-grid right-gutter';
 }
 
+.article-content{
+  grid-area: article-content;
+  width: 100%;
+}
+
+.article{
+  display: grid;
+  grid-template-areas: 
+    'left-gutter article-content right-gutter'
+  ;
+  grid-template-columns: [first] 6.5vw [line2] auto [line3] 6.5vw;
+}
+
 .highlight{
   grid-template-columns: 58% auto;
 }
@@ -34,7 +47,7 @@ code {
 
 .left-gutter{
   grid-area: left-gutter;
-  width: 30px;
+  width: 6.5vw;
 }
 
 .banner{
@@ -48,7 +61,7 @@ code {
 
 .right-gutter{
   grid-area: right-gutter;
-  width: 30px;
+  width: 6.5vw;
 }
 
 .my-masonry-grid {
@@ -65,16 +78,6 @@ code {
 .my-masonry-grid_column > div { /* change div to reference your elements you put in <Masonry> */
   background: transparent;
   margin-bottom: 30px;
-}
-
-@media only screen and (max-width: 600px) {
-  .right-gutter{
-    width: 20px;
-  }
-
-  .left-gutter{
-    width: 20px;
-  }
 }
 
 @media (max-width: 800px) {
