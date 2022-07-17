@@ -1,5 +1,5 @@
 import React from "react";
-import { Tag } from "../Tag/Tag";
+import { Tags } from "../Tag/Tags";
 
 interface Props {
   title: string;
@@ -27,15 +27,7 @@ export const Card: React.FC<Props> = ({ ...props }) => {
           {props.title}
         </h2>
         <span className="flex flex-row flex-wrap justify-start -ml-2 my-2">
-          {props.tags
-            ? props.tags.map((tag, i) => {
-                return (
-                  <div className="" key={i}>
-                    <Tag tagName={tag} />
-                  </div>
-                );
-              })
-            : ""}
+          <Tags tags={props.tags} />
         </span>
         <p className="text-left text-xs md:text-base">{props.snippet}</p>
         <div className="card-actions justify-end py-2">
