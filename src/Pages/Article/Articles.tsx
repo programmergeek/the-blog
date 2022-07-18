@@ -1,5 +1,6 @@
 import React from "react";
 import { Header } from "../../Components/Blocks/Header";
+import { Image } from "../../Components/Blocks/Image";
 import { SubHeader } from "../../Components/Blocks/SubHeader";
 import { Text } from "../../Components/Blocks/Text";
 import { NavBar } from "../../Components/Nav-bar/NavBar";
@@ -7,7 +8,7 @@ import { NavBar } from "../../Components/Nav-bar/NavBar";
 export const Articles: React.FC = () => {
   return (
     <NavBar>
-      <div className="article h-fit]">
+      <div className="article h-fit">
         <div className="left-gutter border-2 border-black"></div>
         <div className="article-content border-2 border-black">
           <Header content="CSS Specificity" />
@@ -37,6 +38,10 @@ export const Articles: React.FC = () => {
               },
               { content: "Fusce rhoncus viverra egestas. " },
             ]}
+          />
+          <Image
+            content="https://picsum.photos/700/600"
+            link="https://picsum.photos/700/500"
           />
         </div>
         <div className="right-gutter border-2 border-black"></div>
