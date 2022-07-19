@@ -7,10 +7,10 @@ export const Image: React.FC<content> = ({ ...props }) => {
       <img
         src={props.content}
         alt=""
-        className="mx-auto max-w-2xl rounded-md"
+        className="mx-auto max-w-xs md:max-w-md lg:max-w-2xl rounded-md"
       />
       {props.link ? (
-        <p className="text-center font-medium">
+        <p className="text-center text-xs md:text-base font-medium">
           Source:{" "}
           <a
             className="text-primary hover:underline"

@@ -4,7 +4,7 @@ import { block } from "./types";
 // The text block is supposed to handle different types of text, i.e bold, italics, underline, etc...
 export const Text: React.FC<block> = ({ ...props }) => {
   return (
-    <div>
+    <div className="text-xs md:text-base">
       {props.content.map((text, i) => {
         if (text.type === "bold") {
           return <span className="font-bold"> {props.content[i].content}</span>;
