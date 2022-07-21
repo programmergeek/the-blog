@@ -19,9 +19,9 @@ export const Articles: React.FC = () => {
             <Tags tags={["CSS", "Front-end", "Web Dev"]} />
           </section>
           <img
-            src="https://picsum.photos/1500/700"
+            src="https://picsum.photos/900/800"
             alt=""
-            className="rounded-md"
+            className="rounded-md mx-auto"
           />
           <section className="article-body pt-4">
             <Header content="CSS Specificity" />
@@ -53,8 +53,8 @@ export const Articles: React.FC = () => {
               ]}
             />
             <Image
-              content="https://picsum.photos/700/600"
-              link="https://picsum.photos/700/500"
+              content="https://picsum.photos/700"
+              link="https://picsum.photos/700"
             />
           </section>
         </div>
