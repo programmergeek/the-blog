@@ -7,7 +7,7 @@ interface Props {
 
 export const Tags: React.FC<Props> = ({ ...props }) => {
   return (
-    <span className="flex flex-row flex-wrap justify-start -ml-2 mb-1">
+    <span className="flex flex-row flex-wrap justify-start -ml-2 mb-1 w-fit">
       {props.tags
         ? props.tags.map((tag, i) => {
             return (
