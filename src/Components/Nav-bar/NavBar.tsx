@@ -4,6 +4,7 @@ import { Menu } from "../Icons/menu";
 
 interface Props {
   children: React.ReactNode;
+  logoSize?: "small" | "big" | "xs" | "md";
 }
 
 export const NavBar: React.FC<Props> = ({ ...props }) => {
@@ -33,10 +34,13 @@ export const NavBar: React.FC<Props> = ({ ...props }) => {
         <div className="w-full navbar px-5 bg-base-100 fixed top-0 z-50">
           <div className="flex-1 px-2 mx-2">
             <a href="/" className="hidden md:block">
-              <Logo size={logoSize} />
+              <Logo size={props.logoSize ? props.logoSize : logoSize} />
             </a>
-            <a href="/" className="block md:hidden">
-              <Logo size="small" />
+            <a href="/" className="hidden sm:block md:hidden">
+              <Logo size={props.logoSize ? props.logoSize : "small"} />
+            </a>
+            <a href="/" className="block sm:hidden">
+              <Logo size="xs" />
             </a>
           </div>
           <div className="flex-none hidden lg:block">
