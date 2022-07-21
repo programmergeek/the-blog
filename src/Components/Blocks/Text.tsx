@@ -7,12 +7,22 @@ export const Text: React.FC<block> = ({ ...props }) => {
     <div className="text-xs md:text-base">
       {props.content.map((text, i) => {
         if (text.type === "bold") {
-          return <span className="font-bold"> {props.content[i].content}</span>;
+          return (
+            <span key={i} className="font-bold">
+              {" "}
+              {props.content[i].content}
+            </span>
+          );
         } else if (text.type === "italic") {
-          return <span className="italic"> {props.content[i].content} </span>;
+          return (
+            <span key={i} className="italic">
+              {" "}
+              {props.content[i].content}{" "}
+            </span>
+          );
         } else if (text.type === "link") {
           return (
-            <span>
+            <span key={i}>
               <a
                 className="text-primary hover:underline"
                 href={props.content[i].link}
@@ -23,10 +33,13 @@ export const Text: React.FC<block> = ({ ...props }) => {
           );
         } else if (text.type === "underline") {
           return (
-            <span className="underline"> {props.content[i].content} </span>
+            <span key={i} className="underline">
+              {" "}
+              {props.content[i].content}{" "}
+            </span>
           );
         } else {
-          return <span> {props.content[i].content} </span>;
+          return <span key={i}> {props.content[i].content} </span>;
         }
       })}
     </div>
