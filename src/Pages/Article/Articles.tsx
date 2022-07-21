@@ -1,8 +1,6 @@
 import React from "react";
-import { Header } from "../../Components/Blocks/Header";
-import { Image } from "../../Components/Blocks/Image";
-import { SubHeader } from "../../Components/Blocks/SubHeader";
-import { Text } from "../../Components/Blocks/Text";
+import { Blocks } from "../../Components/Blocks/Blocks";
+import { block } from "../../Components/Blocks/types";
 import { NavBar } from "../../Components/Nav-bar/NavBar";
 import { Tags } from "../../Components/Tag/Tags";
 
@@ -24,38 +22,7 @@ export const Articles: React.FC = () => {
             className="rounded-md mx-auto"
           />
           <section className="article-body pt-4">
-            <Header content="CSS Specificity" />
-            <SubHeader content="Sub-Header" />
-            <Text
-              type="normal"
-              content={[
-                {
-                  content:
-                    "Suspendisse in est felis. Phasellus purus nisi, pretium sit amet rhoncus a, venenatis id sapien. ",
-                  type: "bold",
-                },
-                {
-                  content: "Suspendisse in dapibus lectus. ",
-                  type: "link",
-                  link: "https://google.com",
-                },
-                {
-                  content:
-                    "Vestibulum convallis, justo porttitor tristique pretium, massa orci scelerisque dui, quis dignissim nisi libero sit amet libero. ",
-                  type: "italic",
-                },
-                {
-                  content:
-                    "Etiam non nulla vel nulla finibus scelerisque vitae quis justo. ",
-                  type: "underline",
-                },
-                { content: "Fusce rhoncus viverra egestas. " },
-              ]}
-            />
-            <Image
-              content="https://picsum.photos/700"
-              link="https://picsum.photos/700"
-            />
+            <Blocks blocks={testData} />
           </section>
         </div>
         <div className="right-gutter"></div>
@@ -63,3 +30,57 @@ export const Articles: React.FC = () => {
     </NavBar>
   );
 };
+
+const testData: block[] = [
+  {
+    type: "header",
+    content: [
+      {
+        content: "Header",
+      },
+    ],
+  },
+  {
+    type: "sub-header",
+    content: [
+      {
+        content: "Sub-header",
+      },
+    ],
+  },
+  {
+    type: "normal",
+    content: [
+      {
+        content:
+          "Suspendisse in est felis. Phasellus purus nisi, pretium sit amet rhoncus a, venenatis id sapien. ",
+        type: "bold",
+      },
+      {
+        content: "Suspendisse in dapibus lectus. ",
+        type: "link",
+        link: "https://google.com",
+      },
+      {
+        content:
+          "Vestibulum convallis, justo porttitor tristique pretium, massa orci scelerisque dui, quis dignissim nisi libero sit amet libero. ",
+        type: "italic",
+      },
+      {
+        content:
+          "Etiam non nulla vel nulla finibus scelerisque vitae quis justo. ",
+        type: "underline",
+      },
+      { content: "Fusce rhoncus viverra egestas. " },
+    ],
+  },
+  {
+    type: "image",
+    content: [
+      {
+        content: "https://picsum.photos/700",
+        link: "https://picsum.photos/700",
+      },
+    ],
+  },
+];
