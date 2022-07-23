@@ -51,6 +51,11 @@ export default {
       title: "Body",
       type: "blockContent",
     },
+    {
+      name: "snippet",
+      title: "Post Snippet",
+      type: "simpleTextBlock",
+    },
   ],
 
   preview: {
