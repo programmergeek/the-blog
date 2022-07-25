@@ -1,10 +1,44 @@
-import React from "react";
-import { Blocks } from "../../Components/Blocks/Blocks";
+import React, { useEffect, useState } from "react";
+import imageUrlBuilder from "@sanity/image-url";
+import sanityClient from "../../client";
 import { block } from "../../Components/Blocks/types";
 import { NavBar } from "../../Components/Nav-bar/NavBar";
 import { Tags } from "../../Components/Tag/Tags";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { useParams } from "react-router-dom";
 
+const builder = imageUrlBuilder(sanityClient);
+function urlFor(source: SanityImageSource) {
+  return builder.image(source);
+}
 export const Articles: React.FC = () => {
+  const [postData, updatePostData] = useState<any>(null);
+  const { slug } = useParams();
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[slug.current == $slug]{
+        title,
+        slug,
+        categories,
+        mainImage{
+          asset->{
+            _id,
+            url
+          }
+        },
+        body,
+        "name": author->name
+      }`,
+        { slug }
+      )
+      .then((data) => updatePostData(data[0]))
+      .catch(console.log);
+  }, [slug]);
+
+  if (!postData) return <div>Loading...</div>;
+
   return (
     <NavBar>
       <div className="article h-fit">
@@ -12,18 +46,16 @@ export const Articles: React.FC = () => {
         <div className="article-content">
           <section className="article-header mb-4 w-fit">
             <h1 className="text-5xl lg:text-8xl text-black font-bold mb-4">
-              Article Title
+              {postData.title}
             </h1>
             <Tags tags={["CSS", "Front-end", "Web Dev"]} />
           </section>
           <img
-            src="https://picsum.photos/900/800"
+            src={urlFor(postData.mainImage).url()}
             alt=""
             className="rounded-md mx-auto"
           />
-          <section className="article-body pt-4">
-            <Blocks blocks={testData} />
-          </section>
+          <section className="article-body pt-4"></section>
         </div>
         <div className="right-gutter"></div>
       </div>
