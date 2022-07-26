@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { PortableText } from "@portabletext/react";
 import { Header } from "../../Components/Blocks/Header";
 import { SubHeader } from "../../Components/Blocks/SubHeader";
+import { Text } from "../../Components/Blocks/Text";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source: SanityImageSource) {
@@ -71,32 +72,7 @@ export const Articles: React.FC = () => {
                     <SubHeader>{value.children[0].text}</SubHeader>
                   ),
 
-                  normal: ({ value }) => (
-                    <p className="my-5">
-                      {/*check for and add any bold, underlined or italic text */}
-                      {value.children.map((text) => {
-                        switch (text.marks[0]) {
-                          case "strong":
-                            return (
-                              <span className="font-semibold">{text.text}</span>
-                            );
-
-                          case "underline":
-                            return (
-                              <span className="underline"> {text.text} </span>
-                            );
-
-                          case "italic":
-                            return (
-                              <span className="italic"> {text.text} </span>
-                            );
-
-                          default:
-                            return text.text;
-                        }
-                      })}
-                    </p>
-                  ),
+                  normal: ({ value }) => <Text value={value} />,
                 },
                 types: {
                   image: ({ value }) => (

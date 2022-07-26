@@ -12,9 +12,6 @@ export const Blocks: React.FC<{ blocks: block[] }> = ({ ...props }) => {
     <div>
       {props.blocks.map((block) => {
         switch (block.type) {
-          case "normal":
-            return <Text type="normal" content={block.content} />;
-
           case "image":
             return (
               <Image
