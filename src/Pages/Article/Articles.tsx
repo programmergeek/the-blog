@@ -73,6 +73,15 @@ export const Articles: React.FC = () => {
                   ),
 
                   normal: ({ value }) => <Text value={value} />,
+
+                  blockquote: ({ value }) => (
+                    <div className="flex bg-accent p-5 rounded-md">
+                      <div className="w-2 bg-primary rounded-sm"></div>
+                      <div className="ml-3">
+                        {value.children.map((text) => text.text)}
+                      </div>
+                    </div>
+                  ),
                 },
                 types: {
                   image: ({ value }) => (
