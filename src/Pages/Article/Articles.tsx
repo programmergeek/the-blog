@@ -43,7 +43,7 @@ export const Articles: React.FC = () => {
 
   return (
     <NavBar>
-      <div className="article h-fit">
+      <div className="article-layout sm:article-layout-sm lg:article-layout-lg h-fit">
         <div className="article-content">
           <section className="article-header mb-4 w-fit">
             <h1 className="text-4xl  sm:text-5xl lg:text-8xl text-black font-bold mb-4">

@@ -28,12 +28,28 @@ code {
   width: 100%;
 }
 
-.article{
-  display: grid;
-  grid-template-areas: 
-    'left-gutter article-content right-gutter'
-  ;
-  grid-template-columns: [first] auto [line2] 75vw [line3] auto;
+@layer components {
+
+  .article-layout{
+    display: grid;
+    grid-template-areas: 
+      'left-gutter article-content right-gutter';
+    grid-template-columns: [gutter1] auto [article] 90vw [gutter2] auto;
+  }
+
+  .article-layout-lg{
+    display: grid;
+    grid-template-areas: 
+      'left-gutter article-content right-gutter';
+    grid-template-columns: [gutter1] auto [article] 60vw [gutter2] auto;
+  }
+  
+  .article-layout-sm{
+    display: grid;
+    grid-template-areas: 
+      'left-gutter article-content right-gutter';
+    grid-template-columns: [gutter1] auto [article] 75vw [gutter2] auto;
+  }
 }
 
 .highlight{
