@@ -46,7 +46,7 @@ export const Articles: React.FC = () => {
       <div className="article-layout sm:article-layout-sm lg:article-layout-lg h-fit">
         <div className="article-content">
           <section className="article-header mb-4 w-fit">
-            <h1 className="text-4xl  sm:text-5xl lg:text-8xl text-black font-bold mb-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-black font-bold mb-4">
               {postData.title}
             </h1>
             <Tags tags={["CSS", "Front-end", "Web Dev"]} />
@@ -62,7 +62,7 @@ export const Articles: React.FC = () => {
               components={{
                 block: {
                   h2: ({ value }) => (
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl text-black font-semibold my-3">
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl text-black font-semibold my-3">
                       {value.children[0].text}
                     </h1>
                   ),
