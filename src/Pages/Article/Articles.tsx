@@ -7,6 +7,7 @@ import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { useParams } from "react-router-dom";
 import { PortableText } from "@portabletext/react";
 import { Header } from "../../Components/Blocks/Header";
+import { SubHeader } from "../../Components/Blocks/SubHeader";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source: SanityImageSource) {
@@ -67,9 +68,7 @@ export const Articles: React.FC = () => {
                   ),
 
                   h3: ({ value }) => (
-                    <h2 className="text-2xl md:text-3xl lg:text-5xl mt-8 text-black font-semibold my-2">
-                      {value.children[0].text}
-                    </h2>
+                    <SubHeader>{value.children[0].text}</SubHeader>
                   ),
 
                   normal: ({ value }) => (
