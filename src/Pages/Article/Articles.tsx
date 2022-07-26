@@ -6,6 +6,7 @@ import { Tags } from "../../Components/Tag/Tags";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { useParams } from "react-router-dom";
 import { PortableText } from "@portabletext/react";
+import { Header } from "../../Components/Blocks/Header";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source: SanityImageSource) {
@@ -62,20 +63,18 @@ export const Articles: React.FC = () => {
               components={{
                 block: {
                   h2: ({ value }) => (
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl text-black font-semibold my-3">
-                      {value.children[0].text}
-                    </h1>
+                    <Header> {value.children[0].text} </Header>
                   ),
 
                   h3: ({ value }) => (
-                    <h2 className="text-2xl md:text-3xl lg:text-5xl text-black font-semibold my-2">
+                    <h2 className="text-2xl md:text-3xl lg:text-5xl mt-8 text-black font-semibold my-2">
                       {value.children[0].text}
                     </h2>
                   ),
 
                   normal: ({ value }) => (
                     <p className="my-5">
-                      {/*check for and add any bold un */}
+                      {/*check for and add any bold, underlined or italic text */}
                       {value.children.map((text) => {
                         switch (text.marks[0]) {
                           case "strong":

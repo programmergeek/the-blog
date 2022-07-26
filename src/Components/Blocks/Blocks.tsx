@@ -12,11 +12,6 @@ export const Blocks: React.FC<{ blocks: block[] }> = ({ ...props }) => {
     <div>
       {props.blocks.map((block) => {
         switch (block.type) {
-          case "header":
-            // if block type is header, then use header component. Expect data to be
-            // in the first array block
-            return <Header content={block.content[0].content} />;
-
           case "sub-header":
             // if block type is sub-header, then use sub-header component. Expect data to be
             // in the first array block
