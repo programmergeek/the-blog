@@ -33,7 +33,7 @@ code {
   grid-template-areas: 
     'left-gutter article-content right-gutter'
   ;
-  grid-template-columns: [first] 6.5vw [line2] auto [line3] 6.5vw;
+  grid-template-columns: [first] auto [line2] 75vw [line3] auto;
 }
 
 .highlight{
@@ -89,5 +89,11 @@ code {
   }
   .my-masonry-grid_column > div {
     margin-bottom: 15px; /* space between items */
+  }
+}
+
+@media (max-width: 600px) {
+  .article{
+    grid-template-columns: [first] auto [line2] 90vw [line3] auto;
   }
 }

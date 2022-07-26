@@ -44,10 +44,9 @@ export const Articles: React.FC = () => {
   return (
     <NavBar>
       <div className="article h-fit">
-        <div className="left-gutter"></div>
         <div className="article-content">
           <section className="article-header mb-4 w-fit">
-            <h1 className="text-5xl lg:text-8xl text-black font-bold mb-4">
+            <h1 className="text-4xl  sm:text-5xl lg:text-8xl text-black font-bold mb-4">
               {postData.title}
             </h1>
             <Tags tags={["CSS", "Front-end", "Web Dev"]} />
@@ -57,7 +56,7 @@ export const Articles: React.FC = () => {
             alt=""
             className="rounded-md mx-auto"
           />
-          <section className="article-body pt-4 px-5 md:px-[2vw] lg:px-[3vw] xl:px-[11vw]">
+          <section className="article-body px-4 2xl:px-24 ">
             <PortableText
               value={postData.body}
               components={{
@@ -114,7 +113,6 @@ export const Articles: React.FC = () => {
             />
           </section>
         </div>
-        <div className="right-gutter"></div>
       </div>
     </NavBar>
   );
