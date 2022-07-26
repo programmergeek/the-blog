@@ -22,7 +22,7 @@ export const Articles: React.FC = () => {
         `*[slug.current == $slug]{
         title,
         slug,
-        categories,
+        categories[]->{title},
         mainImage{
           asset->{
             _id,
@@ -50,7 +50,7 @@ export const Articles: React.FC = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-black font-bold mb-4">
               {postData.title}
             </h1>
-            <Tags tags={["CSS", "Front-end", "Web Dev"]} />
+            <Tags tags={postData.categories.map((tag: any) => tag.title)} />
           </section>
           <img
             src={urlFor(postData.mainImage).height(800).url()}
