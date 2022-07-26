@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import imageUrlBuilder from "@sanity/image-url";
 import sanityClient from "../../client";
-import { block } from "../../Components/Blocks/types";
 import { NavBar } from "../../Components/Nav-bar/NavBar";
 import { Tags } from "../../Components/Tag/Tags";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { useParams } from "react-router-dom";
+import { PortableText } from "@portabletext/react";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source: SanityImageSource) {
@@ -37,6 +37,8 @@ export const Articles: React.FC = () => {
       .catch(console.log);
   }, [slug]);
 
+  useEffect(() => console.log(postData), [postData]);
+
   if (!postData) return <div>Loading...</div>;
 
   return (
@@ -51,68 +53,69 @@ export const Articles: React.FC = () => {
             <Tags tags={["CSS", "Front-end", "Web Dev"]} />
           </section>
           <img
-            src={urlFor(postData.mainImage).url()}
+            src={urlFor(postData.mainImage).height(800).url()}
             alt=""
             className="rounded-md mx-auto"
           />
-          <section className="article-body pt-4"></section>
+          <section className="article-body pt-4 px-5 md:px-[2vw] lg:px-[3vw] xl:px-[11vw]">
+            <PortableText
+              value={postData.body}
+              components={{
+                block: {
+                  h2: ({ value }) => (
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl text-black font-semibold my-3">
+                      {value.children[0].text}
+                    </h1>
+                  ),
+
+                  h3: ({ value }) => (
+                    <h2 className="text-2xl md:text-3xl lg:text-5xl text-black font-semibold my-2">
+                      {value.children[0].text}
+                    </h2>
+                  ),
+
+                  normal: ({ value }) => (
+                    <p className="my-5">
+                      {/*check for and add any bold un */}
+                      {value.children.map((text) => {
+                        switch (text.marks[0]) {
+                          case "strong":
+                            return (
+                              <span className="font-semibold">{text.text}</span>
+                            );
+
+                          case "underline":
+                            return (
+                              <span className="underline"> {text.text} </span>
+                            );
+
+                          case "italic":
+                            return (
+                              <span className="italic"> {text.text} </span>
+                            );
+
+                          default:
+                            return text.text;
+                        }
+                      })}
+                    </p>
+                  ),
+                },
+                types: {
+                  image: ({ value }) => (
+                    <img
+                      src={urlFor(value.asset._ref).width(500).url()}
+                      alt=""
+                      className="rounded-md mx-auto my-12"
+                    />
+                  ),
+                },
+              }}
+            />
+          </section>
         </div>
         <div className="right-gutter"></div>
       </div>
     </NavBar>
   );
 };
-
-const testData: block[] = [
-  {
-    type: "header",
-    content: [
-      {
-        content: "Header",
-      },
-    ],
-  },
-  {
-    type: "sub-header",
-    content: [
-      {
-        content: "Sub-header",
-      },
-    ],
-  },
-  {
-    type: "normal",
-    content: [
-      {
-        content:
-          "Suspendisse in est felis. Phasellus purus nisi, pretium sit amet rhoncus a, venenatis id sapien. ",
-        type: "bold",
-      },
-      {
-        content: "Suspendisse in dapibus lectus. ",
-        type: "link",
-        link: "https://google.com",
-      },
-      {
-        content:
-          "Vestibulum convallis, justo porttitor tristique pretium, massa orci scelerisque dui, quis dignissim nisi libero sit amet libero. ",
-        type: "italic",
-      },
-      {
-        content:
-          "Etiam non nulla vel nulla finibus scelerisque vitae quis justo. ",
-        type: "underline",
-      },
-      { content: "Fusce rhoncus viverra egestas. " },
-    ],
-  },
-  {
-    type: "image",
-    content: [
-      {
-        content: "https://picsum.photos/700",
-        link: "https://picsum.photos/700",
-      },
-    ],
-  },
-];
