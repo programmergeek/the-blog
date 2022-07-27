@@ -3,6 +3,7 @@ import { Header } from "./Blocks/Header";
 import { SubHeader } from "./Blocks/SubHeader";
 import { Text } from "./Blocks/Text";
 import { Image } from "./Blocks/Image";
+import { Table } from "./Blocks/Table";
 
 export const component = {
   block: {
@@ -16,6 +17,7 @@ export const component = {
   },
   types: {
     image: ({ value }: any) => <Image value={value} />,
+    table: ({ value }: any) => <Table data={value} />,
   },
 
   list: {
