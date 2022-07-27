@@ -4,12 +4,8 @@ import { NavBar } from "../../Components/Nav-bar/NavBar";
 import { Tags } from "../../Components/Tag/Tags";
 import { useParams } from "react-router-dom";
 import { PortableText } from "@portabletext/react";
-import { Header } from "../../Components/Blocks/Header";
-import { SubHeader } from "../../Components/Blocks/SubHeader";
-import { Text } from "../../Components/Blocks/Text";
 import { urlFor } from "../../sanityFunctions";
-import { Image } from "../../Components/Blocks/Image";
-import { BlockQuote } from "../../Components/Blocks/BlockQuote";
+import { component } from "../../Components/PortableTextComponent";
 
 export const Articles: React.FC = () => {
   const [postData, updatePostData] = useState<any>(null);
@@ -57,27 +53,7 @@ export const Articles: React.FC = () => {
             className="rounded-md mx-auto"
           />
           <section className="article-body px-4 2xl:px-24 ">
-            <PortableText
-              value={postData.body}
-              components={{
-                block: {
-                  h2: ({ value }) => (
-                    <Header> {value.children[0].text} </Header>
-                  ),
-
-                  h3: ({ value }) => (
-                    <SubHeader>{value.children[0].text}</SubHeader>
-                  ),
-
-                  normal: ({ value }) => <Text value={value} />,
-
-                  blockquote: ({ value }) => <BlockQuote value={value} />,
-                },
-                types: {
-                  image: ({ value }) => <Image value={value} />,
-                },
-              }}
-            />
+            <PortableText value={postData.body} components={component} />
           </section>
         </div>
       </div>
