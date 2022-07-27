@@ -38,7 +38,7 @@ export const Articles: React.FC = () => {
   if (!postData) return <div>Loading...</div>;
 
   return (
-    <NavBar>
+    <NavBar logoSize="small">
       <div className="article-layout sm:article-layout-sm lg:article-layout-lg h-fit">
         <div className="article-content">
           <section className="article-header mb-4 w-fit">

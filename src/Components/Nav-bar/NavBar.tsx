@@ -32,7 +32,7 @@ export const NavBar: React.FC<Props> = ({ ...props }) => {
       <div className="drawer-content flex flex-col">
         {/* <!-- Navbar --> */}
         <div className="w-full navbar px-5 bg-base-100 fixed top-0 z-50">
-          <div className="flex-1 px-2 mx-2">
+          <div className="flex-1 px-2">
             <a href="/" className="hidden md:block">
               <Logo size={props.logoSize ? props.logoSize : logoSize} />
             </a>
@@ -89,7 +89,7 @@ export const NavBar: React.FC<Props> = ({ ...props }) => {
           <div className="flex-none lg:hidden">
             <label
               htmlFor="my-drawer-3"
-              className="btn btn-square btn-ghost mb-3 mr-5"
+              className="btn btn-square btn-ghost mb-3"
             >
               <Menu />
             </label>
