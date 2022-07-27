@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from "react";
-import imageUrlBuilder from "@sanity/image-url";
 import sanityClient from "../../client";
 import { NavBar } from "../../Components/Nav-bar/NavBar";
 import { Tags } from "../../Components/Tag/Tags";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { useParams } from "react-router-dom";
 import { PortableText } from "@portabletext/react";
 import { Header } from "../../Components/Blocks/Header";
 import { SubHeader } from "../../Components/Blocks/SubHeader";
 import { Text } from "../../Components/Blocks/Text";
+import { urlFor } from "../../sanityFunctions";
+import { Image } from "../../Components/Blocks/Image";
 
-const builder = imageUrlBuilder(sanityClient);
-function urlFor(source: SanityImageSource) {
-  return builder.image(source);
-}
 export const Articles: React.FC = () => {
   const [postData, updatePostData] = useState<any>(null);
   const { slug } = useParams();
@@ -84,13 +80,7 @@ export const Articles: React.FC = () => {
                   ),
                 },
                 types: {
-                  image: ({ value }) => (
-                    <img
-                      src={urlFor(value.asset._ref).width(500).url()}
-                      alt=""
-                      className="rounded-md mx-auto my-12"
-                    />
-                  ),
+                  image: ({ value }) => <Image value={value} />,
                 },
               }}
             />
