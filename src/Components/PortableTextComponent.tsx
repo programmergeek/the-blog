@@ -17,4 +17,13 @@ export const component = {
   types: {
     image: ({ value }: any) => <Image value={value} />,
   },
+
+  list: {
+    bullet: ({ children }: any) => (
+      <ul className="list-item list-disc ml-7"> {children} </ul>
+    ),
+    number: ({ children }: any) => (
+      <ol className="list-item list-decimal"> {children} </ol>
+    ),
+  },
 };
