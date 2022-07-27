@@ -9,6 +9,7 @@ import { SubHeader } from "../../Components/Blocks/SubHeader";
 import { Text } from "../../Components/Blocks/Text";
 import { urlFor } from "../../sanityFunctions";
 import { Image } from "../../Components/Blocks/Image";
+import { BlockQuote } from "../../Components/Blocks/BlockQuote";
 
 export const Articles: React.FC = () => {
   const [postData, updatePostData] = useState<any>(null);
@@ -70,14 +71,7 @@ export const Articles: React.FC = () => {
 
                   normal: ({ value }) => <Text value={value} />,
 
-                  blockquote: ({ value }) => (
-                    <div className="flex bg-accent p-5 rounded-md">
-                      <div className="w-2 bg-primary rounded-sm"></div>
-                      <div className="ml-3">
-                        {value.children.map((text) => text.text)}
-                      </div>
-                    </div>
-                  ),
+                  blockquote: ({ value }) => <BlockQuote value={value} />,
                 },
                 types: {
                   image: ({ value }) => <Image value={value} />,
