@@ -26,15 +26,27 @@ export const Table: React.FC<Props> = ({ ...props }) => {
           }
           return (
             <tbody>
-              <tr className="hover:bg-base-200" key={i}>
-                {row.cells.map((j: any, a: number) => {
-                  return (
-                    <td className="py-4 px-6" key={a}>
-                      {j}
-                    </td>
-                  );
-                })}
-              </tr>
+              {i % 2 === 0 ? (
+                <tr key={i}>
+                  {row.cells.map((j: any, a: number) => {
+                    return (
+                      <td className="py-4 px-6" key={a}>
+                        {j}
+                      </td>
+                    );
+                  })}
+                </tr>
+              ) : (
+                <tr className="bg-base-200" key={i}>
+                  {row.cells.map((j: any, a: number) => {
+                    return (
+                      <td className="py-4 px-6" key={a}>
+                        {j}
+                      </td>
+                    );
+                  })}
+                </tr>
+              )}
             </tbody>
           );
         })}
