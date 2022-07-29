@@ -24,7 +24,7 @@ export const Card: React.FC<Props> = ({ ...props }) => {
       )}
       <div className="p-3 mt-0">
         <h2 className="card-title text-xl text-left md:text-3xl">
-          {props.title}
+          <a href={props.href}>{props.title}</a>
         </h2>
         <span className="flex flex-row flex-wrap justify-start mt-2">
           <Tags tags={props.tags} />
