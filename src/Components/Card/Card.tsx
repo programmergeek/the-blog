@@ -12,7 +12,7 @@ interface Props {
 export const Card: React.FC<Props> = ({ ...props }) => {
   return (
     <div
-      className="card w-full bg-base-100 rounded-md hover:shadow-2xl"
+      className="card w-full bg-base-100 rounded-md shadow-md hover:shadow-2xl"
       style={{ transition: "150ms" }}
     >
       {props.image ? (
