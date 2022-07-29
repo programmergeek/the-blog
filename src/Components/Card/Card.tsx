@@ -26,10 +26,10 @@ export const Card: React.FC<Props> = ({ ...props }) => {
         <h2 className="card-title text-xl text-left md:text-3xl">
           {props.title}
         </h2>
-        <span className="flex flex-row flex-wrap justify-start -ml-2 my-2">
+        <span className="flex flex-row flex-wrap justify-start mt-2">
           <Tags tags={props.tags} />
         </span>
-        <p className="text-left text-xs md:text-base">{props.snippet}</p>
+        <p className="text-left text-xs md:text-base mt-1">{props.snippet}</p>
         <div className="card-actions justify-end py-2">
           <a href={props.href} className="w-fit">
             <button className="btn">Read more</button>
